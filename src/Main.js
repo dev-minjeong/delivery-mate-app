@@ -2,6 +2,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './Main.css';
 import Tr from './Tr';
+import Post from './Post';
 import { useEffect, useState, useRef } from 'react';
 function Main() {
   const [info, setInfo] = useState([]);
@@ -106,6 +107,8 @@ function Main() {
             </tr>
             <Tr info={info} onRemove={onRemove} onEdit={onEdit}></Tr>
           </table>
+          <Post handleSaveData={onSave}></Post>
+          {/* {modalOn && <Modal></Modal>} */}
         </section>
       </main>
     </>
