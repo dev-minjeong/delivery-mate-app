@@ -3,8 +3,9 @@
   padding: 0;
 }
 header {
-  background-color: lightpink;
+  background-color: #5870cb;
   height: 10vh;
+  color: #c0cfff;
 }
 main {
   display: flex;
@@ -13,7 +14,7 @@ main {
   width: 100vw;
 }
 aside {
-  background-color: lightblue;
+  background-color: #8c9eff;
   flex-shrink: 0;
   width: 200px;
   text-align: center;

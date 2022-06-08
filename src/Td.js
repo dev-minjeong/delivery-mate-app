@@ -1,3 +1,5 @@
+import './Td.css';
+
 function Td({ item, onRemove, onEdit }) {
   const handleRemove = () => {
     onRemove(item.id);
@@ -12,8 +14,12 @@ function Td({ item, onRemove, onEdit }) {
       <td>{item.email}</td>
       <td>{item.phone}</td>
       <td>{item.website}</td>
-      <td onClick={handleEdit}>Edit</td>
-      <td onClick={handleRemove}>Remove</td>
+      <td className='button' onClick={handleEdit}>
+        Edit
+      </td>
+      <td className='button' onClick={handleRemove}>
+        Remove
+      </td>
     </tr>
   );
 }

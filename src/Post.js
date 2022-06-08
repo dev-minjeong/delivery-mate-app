@@ -1,6 +1,6 @@
-import useState from 'react';
+import { useState } from 'react';
 
-function Post({ handleSaveData }) {
+const Post = ({ handleSaveData }) => {
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -83,5 +83,5 @@ function Post({ handleSaveData }) {
       </form>
     </>
   );
-}
+};
 export default Post;

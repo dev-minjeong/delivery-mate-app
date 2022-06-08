@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Main.css';
 import Tr from './Tr';
 import Post from './Post';
-import { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 function Main() {
   const [info, setInfo] = useState([]);
   const [selected, setSelected] = useState('');
