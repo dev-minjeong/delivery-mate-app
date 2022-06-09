@@ -17,7 +17,6 @@ const Post = ({ handleSaveData }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     handleSaveData(form);
-    console.log(form);
     setForm({
       name: '',
       email: '',
@@ -26,7 +25,7 @@ const Post = ({ handleSaveData }) => {
     });
   };
   return (
-    <>
+    <div className='createPost'>
       <div>고객 추가</div>
       <form onSubmit={onSubmit}>
         <div>
@@ -81,7 +80,7 @@ const Post = ({ handleSaveData }) => {
           <button type='submit'>Save</button>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 export default Post;

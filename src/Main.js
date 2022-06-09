@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 import './Main.css';
 import Tr from './Tr';
 import Post from './Post';
+import Modal from './Modal';
+import Menu from './Menu';
 import React, { useEffect, useState, useRef } from 'react';
+
 function Main() {
   const [info, setInfo] = useState([]);
   const [selected, setSelected] = useState('');
@@ -37,15 +40,18 @@ function Main() {
       );
     } else {
       // 데이터 추가
-      setInfo((info) =>
-        info.concat({
-          id: nextId.current,
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          website: data.website,
-        })
-      );
+      setInfo((info) => {
+        return [
+          {
+            id: nextId.current,
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            website: data.website,
+          },
+          ...info,
+        ];
+      });
       nextId.current += 1;
     }
   };
@@ -54,15 +60,15 @@ function Main() {
   };
   const onEdit = (item) => {
     setModalOn(true);
-    const selectData = {
+    const selectedData = {
       id: item.id,
       name: item.name,
       email: item.email,
       phone: item.phone,
       website: item.website,
     };
-    console.log(selectData);
-    setSelected(selectData);
+    console.log(selectedData);
+    setSelected(selectedData);
   };
   const onCancel = () => {
     setModalOn(false);
@@ -76,39 +82,30 @@ function Main() {
     <>
       <header>김민정님, 환영합니다!</header>
       <main>
-        <aside>
-          <h3>메뉴</h3>
-          <ul>
-            <li>
-              <Link to={'/filter/korean'}>한식</Link>
-            </li>
-            <li>
-              <Link to={'/filter/japanese'}>일식</Link>
-            </li>
-            <li>
-              <Link to={'/filter/chinese'}>중식</Link>
-            </li>
-            <li>
-              <Link to={'/filter/western'}>양식</Link>
-            </li>
-          </ul>
-          <input type='text'></input>
-        </aside>
+        <Menu></Menu>
         <section>
           <table>
-            <tr>
-              <th>Id</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Website</th>
-              <th>Edit</th>
-              <th>Delete</th>
-            </tr>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Website</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
             <Tr info={info} onRemove={onRemove} onEdit={onEdit}></Tr>
           </table>
           <Post handleSaveData={onSave}></Post>
-          {/* {modalOn && <Modal></Modal>} */}
+          {modalOn && (
+            <Modal
+              selectedData={selected}
+              onCancel={onCancel}
+              onEditSubmit={onEditSubmit}
+            ></Modal>
+          )}
         </section>
       </main>
     </>
