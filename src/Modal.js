@@ -18,11 +18,12 @@ function Modal({ selectedData, onCancel, onEditSubmit }) {
   };
   return (
     <div className='modal'>
-      <div className=''>
-        <h3>회원 정보 수정</h3>
-        <div onClick={handleCancel}>x</div>
-      </div>
-      <form onSubmit={handleEditSubmit}>
+      <form className='modalForm' onSubmit={handleEditSubmit}>
+        <div className='headerForm'>
+          <div></div>
+          <h3>회원 정보 수정</h3>
+          <button onClick={handleCancel}>X</button>
+        </div>
         <div className='editId'>ID: {edited.id}</div>
         <div className='editName'>
           Name:
