@@ -13,14 +13,14 @@ function Main() {
   const [modalOn, setModalOn] = useState(false);
 
   // 고유 아이디
-  const nextId = useRef(11);
+  const nextId = useRef(1);
 
   // 데이터 호출
   useEffect(() => {
-    axios
-      .get('https://jsonplaceholder.typicode.com/users')
-      .then((res) => setInfo(res.data))
-      .catch((err) => console.log(err));
+    // axios
+    //   .get('https://jsonplaceholder.typicode.com/users')
+    //   .then((res) => setInfo(res.data))
+    //   .catch((err) => console.log(err));
   }, []);
   const onSave = (data) => {
     // 데이터 수정
