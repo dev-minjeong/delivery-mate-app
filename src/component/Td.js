@@ -1,4 +1,11 @@
-import './Td.css';
+import styled from 'styled-components';
+
+const Container = styled.tr`
+  .button {
+    cursor: pointer;
+    color: #8c9eff;
+  }
+`;
 
 function Td({ item, onRemove, onEdit }) {
   const handleRemove = () => {
@@ -8,7 +15,7 @@ function Td({ item, onRemove, onEdit }) {
     onEdit(item);
   };
   return (
-    <tr>
+    <Container>
       <td>{item.id}</td>
       <td>{item.name}</td>
       <td>{item.email}</td>
@@ -20,7 +27,7 @@ function Td({ item, onRemove, onEdit }) {
       <td className='button' onClick={handleRemove}>
         Remove
       </td>
-    </tr>
+    </Container>
   );
 }
 export default Td;

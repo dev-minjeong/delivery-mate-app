@@ -1,11 +1,41 @@
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import './Main.css';
-import Tr from './Tr';
-import Post from './Post';
-import Modal from './Modal';
+import Tr from './component/Tr';
+import Post from './component/Post';
+import Modal from './component/Modal';
 import Menu from './Menu';
 import React, { useEffect, useState, useRef } from 'react';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: #5870cb;
+    height: 10vh;
+    color: #c0cfff;
+  }
+  main {
+    display: flex;
+    position: absolute;
+    height: 90vh;
+    width: 100vw;
+  }
+  aside {
+    background-color: #8c9eff;
+    flex-shrink: 0;
+    width: 200px;
+    text-align: center;
+  }
+  aside li {
+    list-style: none;
+  }
+  section {
+    background-color: whitesmoke;
+    flex-grow: 1;
+  }
+`;
 
 function Main() {
   const [info, setInfo] = useState([]);
@@ -79,7 +109,7 @@ function Main() {
     setModalOn(false);
   };
   return (
-    <>
+    <Container>
       <header>김민정님, 환영합니다!</header>
       <main>
         <Menu></Menu>
@@ -108,7 +138,7 @@ function Main() {
           )}
         </section>
       </main>
-    </>
+    </Container>
   );
 }
 export default Main;
