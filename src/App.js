@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Main from './Main';
-import Filter from './component/menu/Filter';
+import Filter from './component/Filter';
 
 /**
  * Main - 게시판 기능 만들기

@@ -2,9 +2,10 @@ import axios from 'axios';
 import Tr from './component/Tr';
 import Post from './component/Post';
 import Modal from './component/Modal';
-import Menu from './Menu';
+import Menu from './component/Menu';
 import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
+import { Route, Routes } from 'react-router-dom';
 
 const Container = styled.div`
   * {
