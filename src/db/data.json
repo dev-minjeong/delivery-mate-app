@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "김민정",
+    "nickname": "라면의정석",
+    "email": "kmjj@gmail.com",
+    "address": {
+      "streetAdress": "50, Modamgongwon-ro 28beon-gil",
+      "city": "Gimpo-si",
+      "zipcode": "10078"
+    },
+    "phone": "010-1234-5678",
+    "bank": {
+      "name": "농협",
+      "account": "19312296023"
+    }
+  },
+  {
+    "id": 2,
+    "name": "김유정",
+    "nickname": "주스러버",
+    "email": "kyj@naver.com",
+    "address": {
+      "streetAdress": "50, Modamgongwon-ro 28beon-gil",
+      "city": "Gimpo-si",
+      "zipcode": "10078"
+    },
+    "phone": "010-9876-5432",
+    "bank": {
+      "name": "신한",
+      "account": "1234567890"
+    }
+  },
+  {
+    "id": 3,
+    "name": "박미애",
+    "nickname": "빵순이",
+    "email": "bakha@hanmail.net",
+    "address": {
+      "streetAdress": "50, Modamgongwon-ro 28beon-gil",
+      "city": "Gimpo-si",
+      "zipcode": "10078"
+    },
+    "phone": "010-1234-5678",
+    "bank": {
+      "name": "하나",
+      "account": "29582943"
+    }
+  }
+]

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
+const ModalBox = styled.div`
   display: flex;
   position: fixed;
   top: 0;
@@ -12,16 +12,6 @@ const Container = styled.div`
   background-color: rgba(97, 97, 97, 0.332);
   flex-direction: column;
   align-items: center;
-  * {
-    color: none;
-    background-color: none;
-    border: none;
-    margin: 0;
-    padding: 0;
-  }
-  button {
-    cursor: pointer;
-  }
   .headerForm {
     display: flex;
     justify-content: space-between;
@@ -73,7 +63,7 @@ function Modal({ selectedData, onCancel, onEditSubmit }) {
     onEditSubmit(edited);
   };
   return (
-    <Container className='modal'>
+    <ModalBox className='modal'>
       <form className='modalForm' onSubmit={handleEditSubmit}>
         <div className='headerForm'>
           <div></div>
@@ -122,7 +112,7 @@ function Modal({ selectedData, onCancel, onEditSubmit }) {
           <button type='submit'>edit</button>
         </div>
       </form>
-    </Container>
+    </ModalBox>
   );
 }
 export default Modal;

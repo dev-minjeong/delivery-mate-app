@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const Container = styled.tr`
   .button {
-    cursor: pointer;
     color: #8c9eff;
   }
 `;
