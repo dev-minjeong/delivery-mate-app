@@ -6,8 +6,8 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // 서버 응답 확인
-app.get('/api/host', (request, respond) => {
-  respond.send({ host: 'minjeong1026' });
+app.get('/api/host', (req, res) => {
+  res.send({ host: 'minjeong' });
 });
 
 // 서버 실행
