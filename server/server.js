@@ -6,8 +6,8 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // 서버 응답 확인
-app.get('/', (request, respond) => {
-  respond.send('Delivery Mate App');
+app.get('/api/host', (request, respond) => {
+  respond.send({ host: 'minjeong1026' });
 });
 
 // 서버 실행

@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Main from './component/Main';
 import Filter from './component/Filter';
 import { createGlobalStyle } from 'styled-components';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 /**
  * Main - 게시판 기능 만들기
@@ -39,9 +41,21 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 function App() {
+  const [host, setHost] = useState('');
+
+  useEffect(() => {
+    _getHost();
+  }, []);
+
+  const _getHost = async () => {
+    const res = await axios.get('/api/host');
+    setHost(res.data.host);
+  };
+
   return (
     <BrowserRouter>
       <GlobalStyle></GlobalStyle>
+      <h3>Hello {host}</h3>
       <Routes>
         <Route path='/' element={<Main />}></Route>
         <Route path='/filter' element={<Filter />}></Route>
